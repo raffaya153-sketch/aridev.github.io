@@ -377,3 +377,17 @@ body {
   color: #aaa;
   background: #0b0b0b;
 }
+
+@media (max-width: 768px) {
+  .project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .project-card {
+    max-width: 420px;
+    width: 100%;
+  }
+}
