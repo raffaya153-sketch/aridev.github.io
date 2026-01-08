@@ -239,29 +239,6 @@ Whether it’s inspired by anime, science fiction, or real-world problems, I enj
   </div>
 </div>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const overlay = document.getElementById("rotateOverlay");
-  const btn = document.getElementById("continueBtn");
-
-  function checkOrientation() {
-    if (window.innerWidth < 768 && window.innerHeight > window.innerWidth) {
-      overlay.style.display = "flex";
-    } else {
-      overlay.style.display = "none";
-    }
-  }
-
-  btn.addEventListener("click", () => {
-    overlay.style.display = "none";
-  });
-
-  window.addEventListener("resize", checkOrientation);
-  checkOrientation();
-});
-</script>
-
-
 </body>
 </html>
  
