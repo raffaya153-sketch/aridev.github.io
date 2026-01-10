@@ -10,6 +10,15 @@
 </head>
 <body>
 
+<div class="typing-bg">
+  <span class="type"></span>
+  <span class="type"></span>
+  <span class="type"></span>
+  <span class="type"></span>
+  <span class="type"></span>
+</div>
+
+
 
 <div class="social-bar">
   <a href="https://www.instagram.com/ari_vibes6t9" target="_blank" aria-label="Instagram">
@@ -231,6 +240,55 @@ Whether it’s inspired by anime, science fiction, or real-world problems, I enj
   © 2025 aridev24 (Abdul Raffay). All rights reserved. ·
   <a href="https://github.com/aridev24">GitHub</a>
 </footer>
+
+<script>
+
+const words = [
+  "AI","CODE","FUTURE","WEB DEV","GAME DEV",
+  "ROBOTICS","SYSTEMS","INTELLIGENCE",
+  "LOGIC","GROWTH"
+].filter(Boolean);
+
+
+const elements = document.querySelectorAll(".typing-bg .type");
+
+elements.forEach((el, i) => {
+  let wordIndex = i % words.length;
+  let charIndex = 0;
+  let deleting = false;
+
+  function type() {
+    const word = words[wordIndex];
+
+    if (!deleting) {
+      charIndex++;
+      if (charIndex >= word.length) {
+        deleting = true;
+      }
+    } else {
+      charIndex--;
+      if (charIndex <= 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+    }
+
+    el.textContent = word.slice(0, charIndex);
+
+    requestAnimationFrame(() => {
+      setTimeout(type, deleting ? 160 : 240);
+
+
+
+    });
+  }
+
+  type();
+});
+</script>
+
+
+
 
 </body>
 </html>
